@@ -1,0 +1,93 @@
+The challenge:
+
+<br>
+Create a simple Login System: 
+
+1. Create a login system that uses conditional statements to check whether a user has entered valid login credentials. 
+<br>
+2. Use a loop to ask the user for their login details until they enter valid ones. 
+<br>
+3. Use a ternary operator to display a message indicating whether the login was successful or not.
+
+<br> <br>
+Bonus challenge 💪🏾 <br>
+ Temperature Converter:  Create a program that converts temperatures between Celsius and Fahrenheit.
+ 
+ 1. Use a conditional statement to check whether the user has selected Celsius or Fahrenheit as the input temperature unit.
+ <br>
+ 2. Use a loop to allow the user to convert multiple temperatures. Use a ternary operator to display the converted temperature.
+
+ <br>
+ <br> <br>
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Challenge</title>
+ </head>
+ <body>
+    
+    <div style="margin:0 auto; max-width:400px; background-color:coral;color:black; text-align:center;
+    padding:20px 0px;font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+
+    <h2>Welcome Log In As a Client</h2>
+
+    <form action="coding_challenge.php" method="POST">
+    <div style="display: flex; flex-direction:column; text-align:center; padding:5px 20px;">
+    <label for="">Email</label>
+    <input type="email" name="email" style="background-color:white; color:red;padding:5px 10px;">
+    <div id="erroEmail" style="color:red;display:none;">
+    <i>***sorry wrong email . check and try again</i>
+    </div>
+    </div>
+
+    <div style="display: flex; flex-direction:column; text-align:center; padding:5px 20px;">
+    <label for="">Password</label>
+    <input type="password" name="password" style="background-color:white; color:red;padding:5px 10px;">
+    <div id="erroPass" style="color:red;display:none;">
+    <i>***sorry wrong email . check and try again</i>
+    </div>
+    </div>
+
+    <div id="erroMsg" style="color:red; display:none;">
+    <i><?php echo ($msg) ?></i>
+    </div>
+   
+    <button style="padding:10px; max-width:400px; background-color:white;color:coral; border:none;font-weight:bolder;"
+    name="submit">
+    Sign In</button>
+    </form>
+    </div>
+ </body>
+ </html>
+
+
+ <?php
+
+//let us define the correct login details using variables
+
+$email = "ijkay@gmail.com";
+$password = "Admin790";
+
+//check if the form has ben submitted
+
+if(isset($_POST['submit'])){
+    $email2 = $_POST['email'];
+    $password2 = $_POST['password'];
+
+    // Check if input values match valid credentials
+    if ($email2 === $email && $password2 === $password){
+        echo "ijaaaa";
+        $msg= "log in succesful";
+        $success = true;
+    }
+    else{
+
+    }
+}
+
+
+
+ ?>
