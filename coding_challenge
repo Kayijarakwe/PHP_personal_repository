@@ -51,8 +51,8 @@ Bonus challenge 💪🏾 <br>
     </div>
     </div>
 
-    <div id="erroMsg" style="color:red; display:none;">
-    <i><?php echo ($msg) ?></i>
+    <div id="errorMsg" style="color:red; display:none; margin:5px auto;">
+    <i>***sorry wrong email or password . check and try again</i>
     </div>
    
     <button style="padding:10px; max-width:400px; background-color:white;color:coral; border:none;font-weight:bolder;"
@@ -79,15 +79,30 @@ if(isset($_POST['submit'])){
 
     // Check if input values match valid credentials
     if ($email2 === $email && $password2 === $password){
-        echo "ijaaaa";
-        $msg= "log in succesful";
+        echo '<script language="javascript">';
+        echo 'alert("Log in successful")';
+        echo '</script>';
+        
         $success = true;
     }
     else{
-
+        echo '<script language="javascript">';
+        echo 'document.getElementById("errorMsg").style.display="block"';
+        echo '</script>';
+        $success = false;
     }
 }
+else{
 
+}
+
+    // If login failed, keep asking for login details until login is successful
+
+        while (!$success) {
+            echo "ijaa";
+        
+        exit();
+    }
 
 
  ?>
