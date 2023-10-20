@@ -1,0 +1,63 @@
+<?php declare(strict_types=1);
+$code = bin2hex(random_bytes(4));
+
+?>
+
+CODING CHALLENGE💪🏾
+
+<br> <br>
+
+Password Generator: Create a function that generates a random password of a specified length.
+ The function should be able to generate passwords containing uppercase and lowercase letters, numbers, 
+ and special characters.
+
+ <br> <br>
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random password Generator</title>
+</head>
+<body>
+    <div id="form" style="margin:0 auto; padding:20px 5px; border-radius:0.6em; max-width:400px; background-color:#adff2f;
+    color:black; text-align:center; height:400px;">
+        <div><h4>WELCOME USER</h4>
+        Click here to Generate new Password </div>  <br> <br> 
+        <form method="post"> 
+
+            <input type="submit" name="button1"
+                class="button" value="Generate Password" /> 
+        </form>
+
+        <div style="margin: 4rem auto;">Your generated password is <br> <br>  <br> <br>
+            <div id="code" style="background-color:#162a10 ;color:white; margin:0 auto; width:60%;
+            display:none;padding: 10px ;">
+            <?php echo htmlspecialchars($code); ?>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<?php
+
+if(array_key_exists('button1', $_POST)) { 
+    generatedPass(); 
+}
+
+function generatedPass(){
+   
+
+    
+
+     echo '<script language="javascript">';
+    echo 'document.getElementById("code").style.display="block"';
+    echo '</script>';
+  
+
+   
+}
+
+?>
